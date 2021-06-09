@@ -1,25 +1,26 @@
-
-// // for - 효율성 테스트 탈락
-// class Solution {
-//     public boolean solution(String[] phone_book) {
-//         boolean answer = true;
-//         int size = phone_book.length;
-//         for (int i=0; i<size-1; i++) {
-//             for (int j=i+1; j<size; j++) {
-//                 if (phone_book[j].startsWith(phone_book[i])) return false;
-//                 if (phone_book[i].startsWith(phone_book[j])) return false;
-//             }
-//         }
-//         return answer;
-//     }
-// }
-
-// // for and hashmap
-
-
-
 import java.util.*;
 
+/** 
+ * 앞 뒤 배열에 있는 전화번호로 시작되는 값인지 체크 후 true, false 리턴
+ */
+class Solution_1 {
+    public boolean solution(String[] phone_book) {
+        boolean answer = true;
+        int size = phone_book.length;
+        for (int i=0; i<size-1; i++) {
+            for (int j=i+1; j<size; j++) {
+                if (phone_book[j].startsWith(phone_book[i])) return false;
+                if (phone_book[i].startsWith(phone_book[j])) return false;
+            }
+        }
+        return answer;
+    }
+}
+
+
+/** 
+ * HashMap에 전화번호를 담고 for 문을 돌려 전화번호 배열에 있는 전화번로로 시작하는지 체크
+ */
 class Solution {
   public static boolean solution(String[] phone_book) {
       boolean answer = true;
