@@ -1,5 +1,10 @@
 import java.util.*;
 
+/** 경우의 수 구하는 문제
+ * 옷의 종류를 키로 가지고, 옷 종류가 같으면 +1
+ * keySet으로 for 문 돌려서 +1을 한 값을 곱해 준다. (각 종류의 옷을 선택하거나 선택하지 않을 수 있으니 +1)
+ * 마지막 값에서 -1을 해준다. (아무것도 선택하지 않을 경우가 있으니 -1)
+ */
 class Solution {
   public static int solution(String[][] clothes) {
     int answer = 1;
